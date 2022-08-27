@@ -1,15 +1,16 @@
 import React from "react";
 import { NavbarWrapper } from "./Navbar.styles";
 import logo from "../../assets/logo.svg";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <NavbarWrapper>
       <nav className="navbar navbar-expand-lg border-bottom navbar-light">
         <div className="container py-3">
-          <a className="navbar-brand ms-5" href="#">
+          <Link className="navbar-brand ms-5" to="/">
             <img src={logo} width="31" alt="logo" />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -19,7 +20,7 @@ function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <i class="fa-solid fa-bars"></i>
+            <i className="fa-solid fa-bars"></i>
           </button>
           <div
             className="collapse navbar-collapse me-5 text-center text-lg-end justify-content-end"
@@ -27,9 +28,9 @@ function Navbar() {
           >
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" href="#">
+                <Link to="/" className="nav-link active">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">

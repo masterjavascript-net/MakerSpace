@@ -3,6 +3,8 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import { Helmet } from "react-helmet";
 import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -16,6 +18,9 @@ function App() {
       <div className="sticky-top">
         <Navbar />
       </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
 
       <Footer />
     </div>

@@ -6,5 +6,6 @@ const client = contentful.createClient({
 });
 
 const getAssets = () => client.getAssets().then((data) => data);
+const getContent = () => client.getEntries().then((data) => data);
 
-export { getAssets };
+export { getAssets, getContent };
