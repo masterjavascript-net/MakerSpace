@@ -1,5 +1,6 @@
 import React from "react";
 import { FooterWrapper } from "./Footer.styles";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -8,7 +9,7 @@ function Footer() {
         <div className="row justify-content-between">
           <div className="col-12 col-md-3">
             <h3 className="mb-4">
-              MakerSpace,{" "}
+              MakerSpace{" "}
               <span>
                 <a
                   title="Baku American Center"
@@ -36,13 +37,13 @@ function Footer() {
           <div className="col-12 col-md-2">
             <ul className=" mt-3 mt-md-0">
               <li>
-                <a href="">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
                 <a href="">About</a>
               </li>
               <li>
-                <a href="">Contact</a>
+                <Link to="/contact">Contact</Link>
               </li>
               <li>
                 <a href="">Subscribe</a>
