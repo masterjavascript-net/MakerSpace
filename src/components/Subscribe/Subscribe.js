@@ -53,6 +53,7 @@ function Subscribe({ setIsOpen, isOpen }) {
           draggable: true,
           progress: undefined,
         });
+        setIsOpen(false);
         reset();
       })
       .catch((error) => {
