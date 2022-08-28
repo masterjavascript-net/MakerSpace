@@ -4,7 +4,7 @@ import logo from "../../assets/logo.svg";
 import classNames from "classnames";
 import { Link, useLocation } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ setIsOpen }) {
   const location = useLocation();
   return (
     <NavbarWrapper>
@@ -55,9 +55,9 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <span onClick={() => setIsOpen(true)} className="nav-link">
                   🚀 Subscribe
-                </a>
+                </span>
               </li>
             </ul>
           </div>

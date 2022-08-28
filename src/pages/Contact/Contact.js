@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet";
 function Contact({ content }) {
   const data = content.filter((item) => item.fields.type === "setting")[0]
     .fields;
-  console.log(data);
+
   const {
     register,
     handleSubmit,
@@ -110,7 +110,6 @@ function Contact({ content }) {
           <div className="col-lg-6">
             <div className="contact-form">
               <form
-                action="https://send.pageclip.co/siQYENJc3rIJ6D8wtOwLGVlw4zDPc0Fa/Subscribe"
                 className="pageclip-form pt-lg-5"
                 method="post"
                 onSubmit={handleSubmit(onSubmit)}

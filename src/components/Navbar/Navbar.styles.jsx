@@ -12,6 +12,7 @@ const NavbarWrapper = styled.div`
       padding: 6px 14.6px;
       font-weight: 500;
       transition: all 0.2s ease-in-out;
+      cursor: pointer;
 
       /* &::before {
         content: "🚀 ";

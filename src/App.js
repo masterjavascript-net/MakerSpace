@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import Contact from "./pages/Contact/Contact";
 import { getContent } from "./helpers/contentful.api";
 import Loading from "./components/Loading/Loading";
+import Subscribe from "./components/Subscribe/Subscribe";
 
 const promiseContent = getContent();
 
@@ -15,6 +16,7 @@ function App() {
   const [content, setContent] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     promiseContent
@@ -46,8 +48,9 @@ function App() {
       {!loading && (
         <>
           <div className="sticky-top">
-            <Navbar />
+            <Navbar setIsOpen={setIsOpen} />
           </div>
+          <Subscribe isOpen={modalIsOpen} setIsOpen={setIsOpen} />
           <Routes>
             <Route path="/" element={<Home content={content} />} />
             <Route path="/contact" element={<Contact content={content} />} />
