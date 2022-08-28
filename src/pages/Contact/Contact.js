@@ -69,11 +69,13 @@ function Contact({ content }) {
         draggable
         pauseOnHover
       />
-      <div className="map">
+      <div
+        style={{
+          filter: "grayscale(90%)",
+        }}
+        className="map"
+      >
         <iframe
-          style={{
-            filter: "grayscale(90%)",
-          }}
           title="Baku American Center"
           width="100%"
           height="570"

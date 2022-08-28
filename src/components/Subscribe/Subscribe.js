@@ -13,10 +13,10 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     borderRadius: "0px",
-    zIndex: "1",
   },
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.8)",
+    zIndex: 2,
   },
 };
 
@@ -66,6 +66,7 @@ function Subscribe({ setIsOpen, isOpen }) {
           draggable: true,
           progress: undefined,
         });
+        setIsOpen(false);
         reset();
       });
   };

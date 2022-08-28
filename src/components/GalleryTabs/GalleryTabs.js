@@ -1,5 +1,6 @@
 import React from "react";
 import { GalleryTabsWrapper } from "./GalleryTabs.styles";
+import { isMobile } from "react-device-detect";
 
 function GalleryTabs({ mode, setMode }) {
   return (
@@ -7,7 +8,7 @@ function GalleryTabs({ mode, setMode }) {
       <div
         style={{
           width: "65px",
-          height: "120px",
+          height: "140px",
           backgroundColor: "#fff",
           position: "fixed",
           zIndex: "1",
@@ -32,6 +33,15 @@ function GalleryTabs({ mode, setMode }) {
           onClick={() => setMode("video")}
           className="fa-solid fa-clapperboard mt-3 fs-3"
         ></i>
+        {!isMobile && (
+          <i
+            style={{
+              color: mode === "scanner" && "#10c9c3",
+            }}
+            onClick={() => setMode("scanner")}
+            class="fa-solid fa-qrcode mt-3 fs-3"
+          ></i>
+        )}
       </div>
     </GalleryTabsWrapper>
   );
