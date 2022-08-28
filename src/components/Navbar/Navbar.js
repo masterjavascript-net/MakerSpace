@@ -6,9 +6,6 @@ import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
   const location = useLocation();
-
-  console.log(location.pathname);
-
   return (
     <NavbarWrapper>
       <nav className="navbar navbar-expand-lg border-bottom navbar-light">

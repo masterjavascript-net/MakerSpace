@@ -2,7 +2,10 @@ import React from "react";
 import { FooterWrapper } from "./Footer.styles";
 import { Link } from "react-router-dom";
 
-function Footer() {
+function Footer({ content: data }) {
+  const content = data.filter((item) => item.fields.type === "setting")[0]
+    .fields;
+
   return (
     <FooterWrapper className="border-top">
       <div className="container py-5">
@@ -27,11 +30,9 @@ function Footer() {
           </div>
           <div className="col-12 col-md-3">
             <div className="contact-info mt-3 mt-md-0">
-              <a href="mailto:AmericanCenterBaku@gmail.com">
-                AmericanCenterBaku@gmail.com
-              </a>
+              <a href="mailto:AmericanCenterBaku@gmail.com">{content.email}</a>
               <br />
-              <a href="tel:+994 12 441 36 80">+994 12 441 36 80</a>
+              <a href="tel:+994 12 441 36 80">{content.phone}</a>
             </div>
           </div>
           <div className="col-12 col-md-2">
@@ -53,34 +54,22 @@ function Footer() {
           <div className="col-2">
             <ul className=" mt-3 mt-md-0">
               <li>
-                <a
-                  href="https://www.facebook.com/bakuamericancenter/"
-                  target={`_blank`}
-                >
+                <a href={content.facebook} target={`_blank`}>
                   Facebook
                 </a>
               </li>
               <li>
-                <a
-                  href="https://www.facebook.com/bakuamericancenter/"
-                  target={`_blank`}
-                >
+                <a href={content.instagram} target={`_blank`}>
                   Instagram
                 </a>
               </li>
               <li>
-                <a
-                  href="https://www.facebook.com/bakuamericancenter/"
-                  target={`_blank`}
-                >
+                <a href={content.twitter} target={`_blank`}>
                   Twitter
                 </a>
               </li>
               <li>
-                <a
-                  href="https://www.facebook.com/bakuamericancenter/"
-                  target={`_blank`}
-                >
+                <a href={content.youtube} target={`_blank`}>
                   Youtube
                 </a>
               </li>
