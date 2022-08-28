@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 import Contact from "./pages/Contact/Contact";
 import { getContent } from "./helpers/contentful.api";
+import Loading from "./components/Loading/Loading";
 
 const promiseContent = getContent();
 
@@ -56,7 +57,7 @@ function App() {
         </>
       )}
 
-      {loading && <h1 className="text-center py-5">Loading...</h1>}
+      {loading && <Loading />}
     </div>
   );
 }
