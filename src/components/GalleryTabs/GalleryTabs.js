@@ -23,14 +23,14 @@ function GalleryTabs({ mode, setMode }) {
             color: mode === "image" && "#007965",
           }}
           onClick={() => setMode("image")}
-          class="fa-solid fa-image  fs-3"
+          className="fa-solid fa-image  fs-3"
         ></i>
         <i
           style={{
             color: mode === "video" && "#ff2442",
           }}
           onClick={() => setMode("video")}
-          class="fa-solid fa-clapperboard mt-3 fs-3"
+          className="fa-solid fa-clapperboard mt-3 fs-3"
         ></i>
       </div>
     </GalleryTabsWrapper>

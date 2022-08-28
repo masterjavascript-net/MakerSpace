@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
   return (
@@ -14,12 +15,18 @@ function App() {
           src="https://kit.fontawesome.com/0071b47268.js"
           crossorigin="anonymous"
         ></script>
+        <link
+          rel="stylesheet"
+          href="https://s.pageclip.co/v1/pageclip.css"
+          media="screen"
+        />
       </Helmet>
       <div className="sticky-top">
         <Navbar />
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
 
       <Footer />

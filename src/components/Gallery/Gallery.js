@@ -58,14 +58,20 @@ function Gallery() {
           images.map((image, index) => (
             <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 p-0">
               <div className="gallery-item">
-                <div
+                {/* <div
                   style={{
                     backgroundImage: `url(${image.imageFile.fields.file.url})`,
                     height: "360px",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
-                ></div>
+                ></div> */}
+
+                <img
+                  className="img-fluid"
+                  src={image.imageFile.fields.file.url}
+                  alt="img"
+                />
 
                 <div className="gallery-item-hover">
                   <a
@@ -81,7 +87,7 @@ function Gallery() {
                     rel="noreferrer"
                     className="position-relative"
                   >
-                    <i class="fa-solid fa-rocket"></i>
+                    <i className="fa-solid fa-rocket"></i>
                   </a>
                 </div>
               </div>

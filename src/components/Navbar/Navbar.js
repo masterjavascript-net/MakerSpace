@@ -1,9 +1,14 @@
 import React from "react";
 import { NavbarWrapper } from "./Navbar.styles";
 import logo from "../../assets/logo.svg";
-import { Link } from "react-router-dom";
+import classNames from "classnames";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
+  const location = useLocation();
+
+  console.log(location.pathname);
+
   return (
     <NavbarWrapper>
       <nav className="navbar navbar-expand-lg border-bottom navbar-light">
@@ -28,7 +33,12 @@ function Navbar() {
           >
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/" className="nav-link active">
+                <Link
+                  to="/"
+                  className={classNames("nav-link", {
+                    active: location.pathname === "/",
+                  })}
+                >
                   Home
                 </Link>
               </li>
@@ -38,13 +48,18 @@ function Navbar() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link
+                  className={classNames("nav-link", {
+                    active: location.pathname === "/contact",
+                  })}
+                  to="/contact"
+                >
                   Contact
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
-                  Subscribe
+                  🚀 Subscribe
                 </a>
               </li>
             </ul>

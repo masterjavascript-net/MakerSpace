@@ -13,16 +13,16 @@ const NavbarWrapper = styled.div`
       font-weight: 500;
       transition: all 0.2s ease-in-out;
 
-      &::before {
+      /* &::before {
         content: "🚀 ";
         display: none;
-      }
+      } */
 
       &:hover {
         color: #10c9c3;
-        &::before {
+        /* &::before {
           display: inline;
-        }
+        } */
       }
     }
 
