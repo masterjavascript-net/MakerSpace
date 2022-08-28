@@ -49,7 +49,7 @@ function App() {
           </div>
           <Routes>
             <Route path="/" element={<Home content={content} />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact" element={<Contact content={content} />} />
           </Routes>
 
           <Footer content={content} />

@@ -5,7 +5,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Helmet } from "react-helmet";
 
-function Contact() {
+function Contact({ content }) {
+  const data = content.filter((item) => item.fields.type === "setting")[0]
+    .fields;
+  console.log(data);
   const {
     register,
     handleSubmit,
@@ -93,13 +96,13 @@ function Contact() {
               </p>
               <ul>
                 <li>
-                  <span>Address:</span> 10111 Santa Monica Boulevard, LA
+                  <span>Address:</span> {data.address}
                 </li>
                 <li>
-                  <span>Phone:</span> +44 987 065 908
+                  <span>Phone:</span> {data.phone}
                 </li>
                 <li>
-                  <span>Email:</span> info@Example.com
+                  <span>Email:</span> {data.email}
                 </li>
               </ul>
             </div>
