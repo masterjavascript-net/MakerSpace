@@ -3,7 +3,7 @@ import { FooterWrapper } from "./Footer.styles";
 
 function Footer() {
   return (
-    <FooterWrapper>
+    <FooterWrapper className="border-top">
       <div className="container py-5">
         <div className="row justify-content-between">
           <div className="col-12 col-md-3">
