@@ -3,6 +3,7 @@ import styled from "styled-components";
 const GalleryWrapper = styled.div`
   .gallery-item {
     position: relative;
+    z-index: -1;
 
     .gallery-item-hover {
       position: absolute;

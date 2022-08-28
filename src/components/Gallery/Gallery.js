@@ -80,7 +80,7 @@ function Gallery({ content }) {
             ))}
           {mode === "video" &&
             videos.map((video, index) => (
-              <div className="col-12 col-sm-6 col-md-4 p-0" key={index}>
+              <div className="col-12 col-sm-6 col-md-4 p-0 " key={index}>
                 <iframe
                   width="100%"
                   height="360px"

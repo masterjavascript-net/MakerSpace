@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const GalleryTabsWrapper = styled.div`
+  position: relative;
+  z-index: 0;
   div {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
