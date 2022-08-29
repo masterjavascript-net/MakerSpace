@@ -7,7 +7,11 @@ import sound from "../../sounds/click.mp3";
 import Particles from "react-tsparticles";
 import { loadStarsPreset } from "tsparticles-preset-stars";
 
-function QrScanner() {
+function QrScanner({ content }) {
+  const data = content
+    .filter((item) => item.fields.type === "sobject")
+    .map((item) => item.fields);
+
   let navigate = useNavigate();
   const [loading, setLoading] = React.useState(false);
   const [play] = useSound(sound);
@@ -16,7 +20,8 @@ function QrScanner() {
     if (result !== undefined) {
       setLoading(true);
       setTimeout(() => {
-        navigate("/scandetails", { state: { qrCode: result?.text } });
+        const searchResult = data.find((item) => item.id === result?.text);
+        navigate("/scandetails", { state: { qrCode: searchResult } });
       }, 2000);
     }
   };

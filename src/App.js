@@ -59,7 +59,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home content={content} />} />
             <Route path="/contact" element={<Contact content={content} />} />
-            <Route path="/qrscanner" element={<QrScanner />} />
+            <Route
+              path="/qrscanner"
+              element={<QrScanner content={content} />}
+            />
             <Route path="/scandetails" element={<ScanDetails />} />
           </Routes>
 

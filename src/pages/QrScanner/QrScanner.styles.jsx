@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import space from "../../assets/space.png";
-import star from "../../assets/star.svg";
 
 const QrScannerWrapper = styled.div`
   width: 100vw;
