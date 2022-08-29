@@ -1,6 +1,7 @@
 import React from "react";
 import { GalleryTabsWrapper } from "./GalleryTabs.styles";
 import { isMobile } from "react-device-detect";
+import { Link } from "react-router-dom";
 
 function GalleryTabs({ mode, setMode }) {
   return (
@@ -33,14 +34,16 @@ function GalleryTabs({ mode, setMode }) {
           onClick={() => setMode("video")}
           className="fa-solid fa-clapperboard mt-3 fs-3"
         ></i>
-        {!isMobile && (
-          <i
-            style={{
-              color: mode === "scanner" && "#10c9c3",
-            }}
-            onClick={() => setMode("scanner")}
-            class="fa-solid fa-qrcode mt-3 fs-3"
-          ></i>
+        {isMobile && (
+          <Link style={{ color: "black" }} to="/qrscanner">
+            <i
+              style={{
+                color: mode === "scanner" && "#10c9c3",
+              }}
+              onClick={() => setMode("scanner")}
+              className="fa-solid fa-qrcode mt-3 fs-3"
+            ></i>
+          </Link>
         )}
       </div>
     </GalleryTabsWrapper>

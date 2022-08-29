@@ -4,11 +4,13 @@ import Navbar from "./components/Navbar/Navbar";
 import { Helmet } from "react-helmet";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Contact from "./pages/Contact/Contact";
 import { getContent } from "./helpers/contentful.api";
 import Loading from "./components/Loading/Loading";
 import Subscribe from "./components/Subscribe/Subscribe";
+import QrScanner from "./pages/QrScanner";
+import ScanDetails from "./pages/ScanDetails";
 
 const promiseContent = getContent();
 
@@ -17,6 +19,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [modalIsOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     promiseContent
@@ -47,16 +50,20 @@ function App() {
 
       {!loading && (
         <>
-          <div className="sticky-top">
-            <Navbar setIsOpen={setIsOpen} />
-          </div>
+          {location.pathname !== "/qrscanner" && (
+            <div className="sticky-top">
+              <Navbar setIsOpen={setIsOpen} />
+            </div>
+          )}
           <Subscribe isOpen={modalIsOpen} setIsOpen={setIsOpen} />
           <Routes>
             <Route path="/" element={<Home content={content} />} />
             <Route path="/contact" element={<Contact content={content} />} />
+            <Route path="/qrscanner" element={<QrScanner />} />
+            <Route path="/scandetails" element={<ScanDetails />} />
           </Routes>
 
-          <Footer content={content} />
+          {location.pathname !== "/qrscanner" && <Footer content={content} />}
         </>
       )}
 

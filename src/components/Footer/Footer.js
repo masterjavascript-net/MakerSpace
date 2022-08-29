@@ -41,13 +41,13 @@ function Footer({ content: data }) {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="">About</a>
+                <a href="/">About</a>
               </li>
               <li>
                 <Link to="/contact">Contact</Link>
               </li>
               <li>
-                <a href="">Subscribe</a>
+                <a href="/">Subscribe</a>
               </li>
             </ul>
           </div>
