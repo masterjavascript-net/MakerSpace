@@ -32,7 +32,7 @@ function Gallery({ content }) {
 
   return (
     <GalleryWrapper>
-      <div className="container-fluid">
+      <div className="container">
         <GalleryTabs mode={mode} setMode={setMode} />
         <div className="row" id="gallery">
           {mode === "image" &&

@@ -24,8 +24,8 @@ function Footer({ content: data }) {
               </span>
             </h3>
             <p>
-              © 2017 Piroll. All rights reserved. Design by robirurk. Code by
-              nK.
+              © 2022 MakerSpace. All rights reserved. Design by
+              MasterJavascript. Code by MasterJavascript.
             </p>
           </div>
           <div className="col-12 col-md-3">
@@ -41,7 +41,7 @@ function Footer({ content: data }) {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="/">About</a>
+                <Link to="/about">About</Link>
               </li>
               <li>
                 <Link to="/contact">Contact</Link>

@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar";
 import { Helmet } from "react-helmet";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import { Routes, Route, useLocation } from "react-router-dom";
-import Contact from "./pages/Contact/Contact";
+import Contact from "./pages/Contact";
 import { getContent } from "./helpers/contentful.api";
-import Loading from "./components/Loading/Loading";
-import Subscribe from "./components/Subscribe/Subscribe";
+import Loading from "./components/Loading";
+import Subscribe from "./components/Subscribe";
 import QrScanner from "./pages/QrScanner";
 import ScanDetails from "./pages/ScanDetails";
+import About from "./pages/About";
+import ScrollToTop from "react-scroll-to-top";
 
 const promiseContent = getContent();
 
@@ -36,6 +38,19 @@ function App() {
 
   return (
     <div className="App">
+      <ScrollToTop
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "15px",
+          width: "45px",
+          height: "45px",
+        }}
+        smooth={true}
+        component={
+          <i style={{ color: "#ff2442" }} class="fa-solid fa-rocket fs-4"></i>
+        }
+      />
       <Helmet>
         <script
           src="https://kit.fontawesome.com/0071b47268.js"
@@ -48,29 +63,38 @@ function App() {
         />
       </Helmet>
 
-      {!loading && (
+      {error || (
         <>
-          {location.pathname !== "/qrscanner" && (
-            <div className="sticky-top">
-              <Navbar setIsOpen={setIsOpen} />
-            </div>
-          )}
-          <Subscribe isOpen={modalIsOpen} setIsOpen={setIsOpen} />
-          <Routes>
-            <Route path="/" element={<Home content={content} />} />
-            <Route path="/contact" element={<Contact content={content} />} />
-            <Route
-              path="/qrscanner"
-              element={<QrScanner content={content} />}
-            />
-            <Route path="/scandetails" element={<ScanDetails />} />
-          </Routes>
+          {!loading && (
+            <>
+              {location.pathname !== "/qrscanner" && (
+                <Navbar setIsOpen={setIsOpen} />
+              )}
+              <Subscribe isOpen={modalIsOpen} setIsOpen={setIsOpen} />
+              <Routes>
+                <Route path="/" element={<Home content={content} />} />
+                <Route
+                  path="/contact"
+                  element={<Contact content={content} />}
+                />
+                <Route
+                  path="/qrscanner"
+                  element={<QrScanner content={content} />}
+                />
+                <Route path="/scandetails" element={<ScanDetails />} />
+                <Route path="/about" element={<About content={content} />} />
+              </Routes>
 
-          {location.pathname !== "/qrscanner" && <Footer content={content} />}
+              {location.pathname !== "/qrscanner" && (
+                <Footer content={content} />
+              )}
+            </>
+          )}
+
+          {loading && <Loading />}
         </>
       )}
-
-      {loading && <Loading />}
+      {error && <h1>Error</h1>}
     </div>
   );
 }

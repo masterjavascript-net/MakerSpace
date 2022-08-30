@@ -40,9 +40,14 @@ function Navbar({ setIsOpen }) {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link
+                  className={classNames("nav-link", {
+                    active: location.pathname === "/about",
+                  })}
+                  to="/about"
+                >
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <Link
