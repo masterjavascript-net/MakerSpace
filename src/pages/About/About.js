@@ -3,6 +3,7 @@ import AboutWrapper from "./About.styles";
 import Particles from "react-tsparticles";
 import { loadStarsPreset } from "tsparticles-preset-stars";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function About({ content }) {
   const particlesInit = useCallback(async (engine) => {
@@ -16,6 +17,9 @@ function About({ content }) {
 
   return (
     <AboutWrapper>
+      <Helmet>
+        <title>About</title>
+      </Helmet>
       <div className="about-banner py-5">
         <Particles id="tsparticles" options={options} init={particlesInit} />
         <div className="container py-5 about-banner-text my-md-5">
