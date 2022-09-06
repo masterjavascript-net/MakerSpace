@@ -34,7 +34,7 @@ function About({ content }) {
               </p>
               <div className="pt-4">
                 <h4 className="text-light">Our activities</h4>
-                <i class="fa-solid fa-angle-down text-light fs-1"></i>
+                <i className="fa-solid fa-angle-down text-light fs-1"></i>
               </div>
             </div>
           </div>

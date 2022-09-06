@@ -12,6 +12,7 @@ function Navbar({ setIsOpen }) {
         <div className="container py-3">
           <Link className="navbar-brand ms-5" to="/">
             <img src={logo} width="31" alt="logo" />
+            <span className="ms-2">MakerSpace</span>
           </Link>
           <button
             className="navbar-toggler"

@@ -84,7 +84,12 @@ function Subscribe({ setIsOpen, isOpen }) {
         draggable
         pauseOnHover
       />
-      <Modal style={customStyles} isOpen={isOpen} onRequestClose={closeModal}>
+      <Modal
+        style={customStyles}
+        isOpen={isOpen}
+        onRequestClose={closeModal}
+        ariaHideApp={false}
+      >
         <p>Subscribe to our newsletter!</p>
         <form
           className="pageclip-form"

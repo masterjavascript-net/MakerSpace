@@ -48,7 +48,10 @@ function App() {
         }}
         smooth={true}
         component={
-          <i style={{ color: "#ff2442" }} class="fa-solid fa-rocket fs-4"></i>
+          <i
+            style={{ color: "#ff2442" }}
+            className="fa-solid fa-rocket fs-4"
+          ></i>
         }
       />
       <Helmet>
@@ -86,7 +89,7 @@ function App() {
               </Routes>
 
               {location.pathname !== "/qrscanner" && (
-                <Footer content={content} />
+                <Footer openModal={setIsOpen} content={content} />
               )}
             </>
           )}

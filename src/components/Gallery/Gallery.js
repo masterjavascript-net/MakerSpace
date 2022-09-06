@@ -5,6 +5,8 @@ import "photoswipe/style.css";
 import { GalleryWrapper } from "./Gallery.styles";
 import { shuffleArray } from "../../utils/utils";
 import GalleryTabs from "../GalleryTabs/GalleryTabs";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function Gallery({ content }) {
   const images = content
@@ -51,12 +53,21 @@ function Gallery({ content }) {
                   }}
                 ></div> */}
 
-                  <img
+                  <LazyLoadImage
+                    alt="img"
+                    className="img-fluid"
+                    src={image.imageFile.fields.file.url} // use normal <img> attributes as props
+                    width="100%"
+                    effect="blur"
+                    placeholderSrc={image.imageFile.fields.file.url}
+                  />
+
+                  {/* <img
                     className="img-fluid"
                     width="100%"
                     src={image.imageFile.fields.file.url}
                     alt="img"
-                  />
+                  /> */}
 
                   <div className="gallery-item-hover">
                     <a

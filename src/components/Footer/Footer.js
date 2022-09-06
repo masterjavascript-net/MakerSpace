@@ -2,7 +2,7 @@ import React from "react";
 import { FooterWrapper } from "./Footer.styles";
 import { Link } from "react-router-dom";
 
-function Footer({ content: data }) {
+function Footer({ content: data, openModal }) {
   const content = data.filter((item) => item.fields.type === "setting")[0]
     .fields;
 
@@ -47,7 +47,15 @@ function Footer({ content: data }) {
                 <Link to="/contact">Contact</Link>
               </li>
               <li>
-                <a href="/">Subscribe</a>
+                <p
+                  style={{
+                    cursor: "pointer",
+                    color: "#10c9c3",
+                  }}
+                  onClick={() => openModal(true)}
+                >
+                  Subscribe
+                </p>
               </li>
             </ul>
           </div>
