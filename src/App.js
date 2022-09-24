@@ -71,7 +71,15 @@ function App() {
           {!loading && (
             <>
               {location.pathname !== "/qrscanner" && (
-                <Navbar setIsOpen={setIsOpen} />
+                <div
+                  style={{
+                    position: "absolute",
+                    width: "100%",
+                    zIndex: "1",
+                  }}
+                >
+                  <Navbar setIsOpen={setIsOpen} />
+                </div>
               )}
               <Subscribe isOpen={modalIsOpen} setIsOpen={setIsOpen} />
               <Routes>

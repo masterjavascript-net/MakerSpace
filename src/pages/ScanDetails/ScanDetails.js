@@ -33,6 +33,14 @@ function ScanDetails({ qrCode }) {
             <div className="col-12 col-md-10">
               <p className="text-muted">{qrCodeFromState.description}</p>
             </div>
+            <div className="col-10 mt-2">
+              <a
+                href={qrCodeFromState.link}
+                className="btn btn-primary rounded-0"
+              >
+                More details
+              </a>
+            </div>
           </div>
         </div>
       )}

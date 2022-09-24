@@ -6,6 +6,8 @@ import useSound from "use-sound";
 import sound from "../../sounds/click.mp3";
 import Particles from "react-tsparticles";
 import { loadStarsPreset } from "tsparticles-preset-stars";
+import Lottie from "lottie-react";
+import qrAnimation from "../../assets/lottie files/41671-scan.json";
 
 function QrScanner({ content }) {
   const data = content
@@ -53,13 +55,27 @@ function QrScanner({ content }) {
         {!loading && (
           <div
             style={{
-              width: "350px",
-              height: "350px",
+              minWidth: "300px",
+              minHeight: "350px",
             }}
           >
+            <Lottie
+              style={{
+                position: "absolute",
+                transform: "translate(0%,-18%)",
+                zIndex: "1",
+              }}
+              animationData={qrAnimation}
+              loop={true}
+              width="100%"
+            />
             <QrReader
+              videoContainerStyle={{
+                width: "100%",
+              }}
               containerStyle={{
                 marginTop: "-80px",
+                width: "100%",
               }}
               constraints={{
                 audio: true,
