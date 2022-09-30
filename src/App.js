@@ -12,8 +12,7 @@ import Subscribe from "./components/Subscribe";
 import QrScanner from "./pages/QrScanner";
 import ScanDetails from "./pages/ScanDetails";
 import About from "./pages/About";
-import ScrollToTop from "react-scroll-to-top";
-
+import ScrollToTop from "./components/ScrollToTop/scroll-to-top.component";
 const promiseContent = getContent();
 
 function App() {
@@ -38,22 +37,10 @@ function App() {
 
   return (
     <div className="App">
-      <ScrollToTop
-        style={{
-          position: "fixed",
-          bottom: "20px",
-          right: "15px",
-          width: "45px",
-          height: "45px",
-        }}
-        smooth={true}
-        component={
-          <i
-            style={{ color: "#ff2442" }}
-            className="fa-solid fa-rocket fs-4"
-          ></i>
-        }
-      />
+      
+    <ScrollToTop/>
+     
+
       <Helmet>
         <script
           src="https://kit.fontawesome.com/0071b47268.js"

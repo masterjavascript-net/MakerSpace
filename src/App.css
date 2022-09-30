@@ -18,3 +18,31 @@ html {
 .App {
   font-family: "Montserrat", sans-serif;
 }
+
+.myRocketIcon{
+  color: #ff2442;
+  transition: 0.3s ;
+}
+
+.myRocketIcon:hover{
+  transform: rotate(-45deg) scale(1.3);
+}
+
+
+/* <ScrollToTop
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "15px",
+          width: "55px",
+          height: "55px",
+
+        }}
+        className="test"
+        smooth={true}
+        component={
+          <i
+            className="fa-solid fa-rocket fs-4 myRocketIcon"
+          ></i>
+        }
+      /> */
