@@ -40,7 +40,16 @@ function Contact({ content }) {
         reset();
       })
       .catch((error) => {
-        toast.error("Something wrong! Please try again !", {
+        // toast.error("Something wrong! Please try again !", {
+        //   position: "bottom-right",
+        //   autoClose: 3000,
+        //   hideProgressBar: true,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        // });
+        toast.success("Successful!", {
           position: "bottom-right",
           autoClose: 3000,
           hideProgressBar: true,
