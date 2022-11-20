@@ -13,7 +13,6 @@ import QrScanner from "./pages/QrScanner";
 import ScanDetails from "./pages/ScanDetails";
 import About from "./pages/About";
 import ScrollToTop from "react-scroll-to-top";
-import ModelResult from "./pages/ModelResult";
 
 const promiseContent = getContent();
 
@@ -95,7 +94,6 @@ function App() {
                 />
                 <Route path="/scandetails" element={<ScanDetails />} />
                 <Route path="/about" element={<About content={content} />} />
-                <Route path="/modelresult" element={<ModelResult />} />
               </Routes>
 
               {location.pathname !== "/qrscanner" && (

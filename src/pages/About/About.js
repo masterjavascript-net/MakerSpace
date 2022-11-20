@@ -112,8 +112,8 @@ function About({ content }) {
 
           <div className="container pt-5 about-banner-text mt-md-5">
             <div className="row justify-content-center">
-              <div className="col-11 col-md-6 text-center">
-                <h1 className="text-center mt-4">
+              <div className="col-11 col-md-6  text-center">
+                <h1 className="text-center mt-5">
                   Maker<span className="about-title-diff">Space</span>
                 </h1>
                 <p>
