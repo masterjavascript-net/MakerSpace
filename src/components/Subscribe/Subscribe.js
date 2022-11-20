@@ -3,6 +3,8 @@ import Modal from "react-modal";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useForm } from "react-hook-form";
+import Lottie from "lottie-react";
+import mailAnime from "../../assets/lottie files/letter.json";
 
 const customStyles = {
   content: {
@@ -99,50 +101,65 @@ function Subscribe({ setIsOpen, isOpen }) {
         onRequestClose={closeModal}
         ariaHideApp={false}
       >
-        <p>Subscribe to our newsletter!</p>
-        <form
-          className="pageclip-form"
-          method="post"
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <div className="row">
-            <div className="col-12">
-              <input
-                {...register("email", { required: true })}
-                className="form-control rounded-0 py-2"
-                type="email"
-                placeholder="Your Email"
-                name="email"
+        <div style={{ width: "450px" }}>
+          <div className="row justify-content-center">
+            <div className="col-6 d-flex justify-content-center align-items-center">
+              <Lottie
+                style={{ width: "100%" }}
+                animationData={mailAnime}
+                loop={true}
               />
-              <div className="text-danger mt-2">
-                {errors.email && "Email is required"}
-              </div>
+            </div>
+            <div className="col-10 d-flex justify-content-center  flex-column">
+              <p className="fw-bold text-center">
+                Subscribe to our newsletter!
+              </p>
+              <form
+                className="pageclip-form"
+                method="post"
+                onSubmit={handleSubmit(onSubmit)}
+              >
+                <div className="row">
+                  <div className="col-12">
+                    <input
+                      {...register("email", { required: true })}
+                      className="form-control rounded-0 py-2"
+                      type="email"
+                      placeholder="Your Email"
+                      name="email"
+                    />
+                    <div className="text-danger mt-2">
+                      {errors.email && "Email is required"}
+                    </div>
+                  </div>
+                </div>
+                <div className="d-flex justify-content-center mb-4">
+                  <button
+                    className="btn btn-success rounded-0 py-2 mt-2 me-3"
+                    type="submit"
+                    style={{
+                      backgroundColor: "#10c9c3",
+                      borderColor: "#10c9c3",
+                    }}
+                  >
+                    Subscribe now
+                  </button>
+                  <button
+                    style={{
+                      backgroundColor: "rgb(255, 36, 66)",
+                      borderColor: "rgb(255, 36, 66)",
+                    }}
+                    className="btn btn-primary rounded-0 py-2 mt-2"
+                    type="button"
+                    onClick={closeModal}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
-          <div className="d-flex justify-content-center">
-            <button
-              className="btn btn-success rounded-0 py-2 mt-2 me-3"
-              type="submit"
-              style={{
-                backgroundColor: "#10c9c3",
-                borderColor: "#10c9c3",
-              }}
-            >
-              Subscribe now
-            </button>
-            <button
-              style={{
-                backgroundColor: "rgb(255, 36, 66)",
-                borderColor: "rgb(255, 36, 66)",
-              }}
-              className="btn btn-primary rounded-0 py-2 mt-2"
-              type="button"
-              onClick={closeModal}
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
+        </div>
       </Modal>
     </>
   );
