@@ -14,7 +14,7 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    borderRadius: "0px",
+    borderRadius: "10px",
   },
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.8)",
@@ -95,6 +95,7 @@ function Subscribe({ setIsOpen, isOpen }) {
         draggable
         pauseOnHover
       />
+
       <Modal
         style={customStyles}
         isOpen={isOpen}
@@ -135,7 +136,7 @@ function Subscribe({ setIsOpen, isOpen }) {
                 </div>
                 <div className="d-flex justify-content-center mb-4">
                   <button
-                    className="btn btn-success rounded-0 py-2 mt-2 me-3"
+                    className="btn btn-success rounded-1 py-2 mt-2 me-3"
                     type="submit"
                     style={{
                       backgroundColor: "#10c9c3",
@@ -149,7 +150,7 @@ function Subscribe({ setIsOpen, isOpen }) {
                       backgroundColor: "rgb(255, 36, 66)",
                       borderColor: "rgb(255, 36, 66)",
                     }}
-                    className="btn btn-primary rounded-0 py-2 mt-2"
+                    className="btn btn-primary rounded-1 py-2 mt-2"
                     type="button"
                     onClick={closeModal}
                   >

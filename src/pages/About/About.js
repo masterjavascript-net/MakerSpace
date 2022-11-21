@@ -123,7 +123,7 @@ function About({ content }) {
                   as an entrepreneurial lab for young creators. Also, the center
                   includes a special book collection.
                 </p>
-                <div className="pt-4 d-flex flex-column align-items-center">
+                <div className="mt-4 d-flex flex-column align-items-center">
                   <h4 className="text-light about-subtitle-diff">
                     Our activities
                   </h4>

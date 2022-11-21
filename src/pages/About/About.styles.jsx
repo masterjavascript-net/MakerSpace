@@ -38,9 +38,8 @@ const AboutWrapper = styled.div`
 
       .about-subtitle-diff {
         border-bottom: 1px solid #0cc9c3;
-        width: 40%;
-        padding-bottom: 7px;
-        border-radius: 30px;
+        padding: 0 10px 7px 10px;
+        border-radius: 10px;
       }
     }
   }

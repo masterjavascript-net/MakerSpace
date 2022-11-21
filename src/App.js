@@ -71,13 +71,7 @@ function App() {
           {!loading && (
             <>
               {location.pathname !== "/qrscanner" && (
-                <div
-                  style={{
-                    position: "absolute",
-                    width: "100%",
-                    zIndex: "1",
-                  }}
-                >
+                <div className="sticky-top">
                   <Navbar setIsOpen={setIsOpen} />
                 </div>
               )}

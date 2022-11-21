@@ -1,6 +1,6 @@
 import React from "react";
 import { NavbarWrapper } from "./Navbar.styles";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo-bc.png";
 import classNames from "classnames";
 import { Link, useLocation } from "react-router-dom";
 
@@ -11,7 +11,7 @@ function Navbar({ setIsOpen }) {
       <nav className="navbar navbar-expand-lg border-bottom navbar-light">
         <div className="container py-3">
           <Link className="navbar-brand ms-5" to="/">
-            <img src={logo} width="31" alt="logo" />
+            <img src={logo} width="35px" alt="logo" />
             <span className="ms-2">MakerSpace</span>
           </Link>
           <button
