@@ -3,6 +3,7 @@ import { NavbarWrapper } from "./Navbar.styles";
 import logo from "../../assets/logo-bc.png";
 import classNames from "classnames";
 import { Link, useLocation } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
 function Navbar({ setIsOpen }) {
   const location = useLocation();
@@ -61,7 +62,16 @@ function Navbar({ setIsOpen }) {
                 </Link>
               </li>
               <li className="nav-item">
-                <span onClick={() => setIsOpen(true)} className="nav-link">
+                <span
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
+                  onClick={() => {
+                    setIsOpen(true);
+                    document.body.style.overflow = "hidden";
+                    document.documentElement.style.overflow = "hidden";
+                  }}
+                  className="nav-link"
+                >
                   🚀 Subscribe
                 </span>
               </li>

@@ -4,6 +4,7 @@ const QrScannerWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   position: relative;

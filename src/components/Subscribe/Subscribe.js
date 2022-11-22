@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useForm } from "react-hook-form";
 import Lottie from "lottie-react";
 import mailAnime from "../../assets/lottie files/letter.json";
+import { isMobile } from "react-device-detect";
 
 const customStyles = {
   content: {
@@ -18,6 +19,8 @@ const customStyles = {
   },
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.8)",
+    paddingLeft: !isMobile ? "100px" : 0,
+    paddingRight: !isMobile ? "100px" : 0,
     zIndex: 2,
   },
 };
@@ -32,9 +35,12 @@ function Subscribe({ setIsOpen, isOpen }) {
 
   const closeModal = () => {
     setIsOpen(false);
+    document.body.style.overflow = "scroll";
+    document.documentElement.style.overflow = "scroll";
   };
 
   const onSubmit = (data) => {
+    closeModal();
     fetch(
       `https://send.pageclip.co/${process.env.REACT_APP_PAGECLIP_TOKEN}/Subscribe`,
       {

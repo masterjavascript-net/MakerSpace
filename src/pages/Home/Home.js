@@ -8,7 +8,7 @@ function Home({ content }) {
       <Helmet>
         <title>Home</title>
       </Helmet>
-      <div>
+      <div style={{ paddingTop: "95px" }}>
         <Gallery content={content} />
       </div>
     </>

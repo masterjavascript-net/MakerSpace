@@ -63,7 +63,7 @@ function Contact({ content }) {
   };
 
   return (
-    <ContactWrapper className="pb-5">
+    <ContactWrapper className="pb-5" style={{ paddingTop: "95px" }}>
       <Helmet>
         <title>Contact</title>
       </Helmet>
