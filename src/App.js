@@ -20,8 +20,18 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [scrollY,setScrollY] = useState(0);
   const location = useLocation();
 
+  // scroll
+  const changeScrollY = function(t){
+    setScrollY(window.scrollY)
+  }
+  useEffect(() => {
+   window.addEventListener('scroll', changeScrollY);
+  },[])
+
+  
   useEffect(() => {
     promiseContent
       .then((content) => {
@@ -35,10 +45,15 @@ function App() {
       });
   }, []);
 
+  
+
   return (
     <div className="App">
       
-    <ScrollToTop/>
+    {scrollY !== 0 && (
+      <ScrollToTop/>
+    )}
+    
      
 
       <Helmet>

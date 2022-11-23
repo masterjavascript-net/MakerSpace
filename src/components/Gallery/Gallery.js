@@ -36,6 +36,9 @@ function Gallery({ content }) {
     <GalleryWrapper>
       <div className="container">
         <GalleryTabs mode={mode} setMode={setMode} />
+        <div className="row">
+          <h1 className="d-flex justify-content-center mb-5">Our Gallery</h1>
+        </div>
         <div className="row" id="gallery">
           {mode === "image" &&
             images.map((image, index) => (
