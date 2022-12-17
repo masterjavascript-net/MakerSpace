@@ -13,6 +13,7 @@ import QrScanner from "./pages/QrScanner";
 import ScanDetails from "./pages/ScanDetails";
 import About from "./pages/About";
 import ScrollToTop from "./components/ScrollToTop/scroll-to-top.component";
+import Library from "./pages/Library/Library";
 const promiseContent = getContent();
 
 function App() {
@@ -88,6 +89,7 @@ function App() {
                 />
                 <Route path="/scandetails" element={<ScanDetails />} />
                 <Route path="/about" element={<About content={content} />} />
+                <Route path="/library" element={<Library/>} />
               </Routes>
 
               {location.pathname !== "/qrscanner" && (
